@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Algo-Visualizer</h1>
+    </header>
+    <div class="input-container">
+      <div class="label">
+        <h3>Choose an Array Size:</h3>
+        <h4>(Between 1-10000)</h4>
+      </div>
+
+      <input
+        id="array-size-input"
+        type="text"
+        placeholder="Enter a Number"
+        required
+      />
+
+      <button id="gen-button" type="button">Generate</button>
+    </div>
+    <p id="error-mssg"></p>
+    <p class="array"></p>
+    <main>
+      <div class="sorting">
+        <h2>Sorting Algorithms</h2>
+        <select class="ui dropdown">
+          <option value="">Merge Sort</option>
+          <option value="1">Quick Sort</option>
+          <option value="0">Heap Sort</option>
+          <option value="0">Bubble Sort</option>
+        </select>
+      </div>
+      <div class="searching">
+        <h2>Searching Algorithms</h2>
+        <select class="ui dropdown">
+          <option value="">Binary Search</option>
+          <option value="1">Linear Search</option>
+        </select>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

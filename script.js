@@ -1,34 +1,52 @@
-let arrSize = 0;
-let arr = [];
-let error = document.getElementById("error-mssg");
-let input = document.getElementById("array-size-input");
-let button = document.querySelector("#gen-button");
-var inputPlaceholder = document.querySelectorAll("inputPlaceholder");
-for (i = 0; i < inputPlaceholder.length; i++) {
-  inputPlaceholder[i].setAttribute(
-    "size",
-    inputPlaceholder[i].getAttribute("placeholder").length
-  );
-}
-button.addEventListener("click", function() {
-  let val = input.value;
-  if (isNaN(val)) {
-    error.textContent = "You Must Enter a Valid Number!";
-  } else {
-    error.textContent = "";
-  }
+const arrInfo = {
+  arrSize: 0,
+  arr: [],
+  isSorted: false
+};
+const labels = {
+  x_indicies: [],
+  y_values: []
+};
 
-  arrSize = input.value;
-  if (arrSize < 0 || arrSize > 10000) {
-    error.textContent = "Please Enter a Number between 1 and 10000";
+let error = document.getElementById('error-mssg');
+let input_field = document.getElementById('array-size-input');
+const button = document.querySelector('#gen-button');
+
+button.addEventListener('click', function() {
+  clearArr();
+  let input = input_field.value;
+  if (!isValidInput(input)) {
+    error.textContent = 'You Must Enter a Valid Number!';
   } else {
-    arr = generateArray(arrSize);
-    console.log(generateArray(arrSize));
+    error.textContent = '';
+    arrInfo.arrSize = input;
+    arrInfo.arr = generateArray(arrInfo.arrSize);
+    setChartLabels(arrInfo.arr);
+    console.log('arr is ' + arrInfo.arr);
+    chartIt();
   }
-  input.value = "";
+  input_field.value = '';
 });
 
-// document.write(arr);
+function clearArr() {
+  const chart = document.querySelector('#array-chart');
+  // if (chart) {
+  //   chart.remove();
+  // }
+  arrInfo.arrSize = 0;
+  arrInfo.arr = [];
+  labels.x_indicies = [];
+  labels.y_values = [];
+}
+
+function isValidInput(input) {
+  if (!input || isNaN(input) || input < 0 || input > 10000) {
+    return false;
+  }
+  return true;
+}
+
+// generates and returns an array based on given input size;
 function generateArray(size) {
   const arr = [];
   for (let i = 0; i < size; i++) {
@@ -37,44 +55,45 @@ function generateArray(size) {
   return arr;
 }
 
-var ctx = document.getElementById("array-chart").getContext("2d");
-var myChart = new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)"
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)"
-        ],
-        borderWidth: 1
-      }
-    ]
-  },
-  options: {
-    scales: {
-      yAxes: [
+//issues if user deicdes to gen new array need to clear vals first before gen new array
+
+function setChartLabels(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    labels.x_indicies.push(i);
+    labels.y_values.push(arr[i]);
+  }
+}
+
+//creates chart and displays on page.
+function chartIt() {
+  const ctx = document.getElementById('array-chart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels.x_indicies,
+      datasets: [
         {
-          ticks: {
-            beginAtZero: true
-          }
+          label: 'Your Generated Array',
+          data: labels.y_values,
+          backgroundColor: 'rgba(255, 99, 80)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
         }
       ]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      responsive: false
     }
-  }
-});
+  });
+}
+
+// var inputPlaceholder = document.querySelectorAll('inputPlaceholder');
+// for (i = 0; i < inputPlaceholder.length; i++) {
+//   inputPlaceholder[i].setAttribute(
+//     'size',
+//     inputPlaceholder[i].getAttribute('placeholder').length
+//   );
+// }

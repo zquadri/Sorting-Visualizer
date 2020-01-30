@@ -16,36 +16,78 @@
   </head>
   <body>
     <header>
-      <h1>Algo-Visualizer</h1>
+      <h1>Sorting-Visualizer</h1>
     </header>
-    <div class="input-container">
-      <div class="label">
-        <h3>Choose an Array Size:</h3>
-        <h4>(Between 1-10000)</h4>
-      </div>
+    <main>
+      <div class="container">
+        <div class="left-col">
+          <h1>Generate</h1>
+          <div class="input-container">
+            <div class="label">
+              <h3>Choose an Array Size:</h3>
+              <span class="array-description">
+                <h4>(Between 1-10000)</h4>
+              </span>
+            </div>
+            <div class="input-button-container">
+              <input
+                id="array-size-input"
+                type="text"
+                placeholder="Enter a Number"
+                required
+              />
+              <div>
+                <button id="gen-button" type="button">Generate</button>
+              </div>
+              <p id="error-mssg"></p>
+            </div>
+          </div>
+          <canvas id="array-chart" width="400" height="400"></canvas>
+        </div>
+        <div class="right-col">
+          <h1>Sort</h1>
+              <div class="input-container">
+                    <h3>Choose a Sorting Algorithm</h3>
+                    </span>
+                  </div>
+                  <select class="select-css">
+                      <option value="">Merge Sort</option>
+                      <option value="1">Quick Sort</option>
+                      <option value="0">Heap Sort</option>
+                      <option value="0">Bubble Sort</option>
+                      <option value="0">Insertion Sort</option>
+                    </select>
+                    <div>
+                      <button id="gen-button" type="button">Sort</button>
+                    </div>
+                    <p id="error-mssg"></p>
+                  </div>
+                </div>
+            <!-- <h2>Choose a Sorting Algorithm</h2>
 
+              <button id="gen-button" type="button">Sort</button>               -->
+        
+      </div>
+    </main>
+
+    <!-- <div class = 'input-canvas-container'>
+        <div class="input-container">
+
+        </div>
       <input
         id="array-size-input"
         type="text"
         placeholder="Enter a Number"
         required
       />
-
       <button id="gen-button" type="button">Generate</button>
     </div>
     <p id="error-mssg"></p>
-    <canvas id="array-chart" width="200" height="200"></canvas>
     <main>
-      <div class="barchart"></div>
-      <div class="sorting">
-        <h2 style="color: #0f2c5c;">Sorting Algorithms</h2>
-        <select class="select-css">
-          <option value="">Merge Sort</option>
-          <option value="1">Quick Sort</option>
-          <option value="0">Heap Sort</option>
-          <option value="0">Bubble Sort</option>
-          <option value="0">Insertion Sort</option>
-        </select>
+      <div class="barchart"></div> -->
+
+    <!-- <h2 style="color: #0f2c5c;">Sorting Algorithms</h2>
+
       </div>
       <div class="searching">
         <h2>Searching Algorithms</h2>
@@ -53,8 +95,8 @@
           <option value="">Binary Search</option>
           <option value="1">Linear Search</option>
         </select>
-      </div>
-    </main>
+      </div> -->
+    <!-- </main> -->
     <script src="script.js"></script>
   </body>
 </html>

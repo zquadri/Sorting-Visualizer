@@ -85,6 +85,23 @@ h4 {
   cursor: pointer;
   filter: brightness(125%);
 }
+
+#sort-button {
+  font-size: 1.6em;
+  margin: 2em 0;
+  border-radius: 5px;
+  background-color: rgba(255, 99, 80);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+#sort-button:hover {
+  cursor: pointer;
+  filter: brightness(125%);
+}
+
 .sorting {
   font-size: 1.5em;
   display: flex;
@@ -181,4 +198,45 @@ input {
 #array-chart {
   display: block;
   margin: 10px auto;
+}
+#sorted-array-chart {
+  display: block;
+  margin: 10px auto;
+}
+
+.algo-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0px auto;
+}
+.algo-table td {
+  font-family: roboto;
+  font-weight: 100;
+  font-size: 1em;
+  padding: 10px 14px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+  color: black;
+  border-color: rgba(255, 99, 80);
+}
+.algo-table th {
+  font-family: roboto;
+  font-weight: 100;
+  font-size: 1em;
+  font-weight: normal;
+  padding: 10px 14px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  word-break: normal;
+  color: rgba(255, 99, 80);
+  border-color: rgba(255, 99, 80);
+}
+
+.algo-table {
+  border-color: inherit;
+  text-align: left;
+  vertical-align: top;
 }

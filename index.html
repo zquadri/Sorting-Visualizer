@@ -46,27 +46,35 @@
         </div>
         <div class="right-col">
           <h1>Sort</h1>
-              <div class="input-container">
+              <div class="input-container right">
                     <h3>Choose a Sorting Algorithm</h3>
                     </span>
                   </div>
                   <select class="select-css">
-                      <option value="">Merge Sort</option>
-                      <option value="1">Quick Sort</option>
-                      <option value="0">Heap Sort</option>
-                      <option value="0">Bubble Sort</option>
-                      <option value="0">Insertion Sort</option>
+                      <option value="" disabled selected>Sort with...</option>
+                      <option value="mergeSort">Merge Sort</option>
+                      <option value="quickSort">Quick Sort</option>
+                      <option value="heapSort">Heap Sort</option>
+                      <option value="bubbleSort">Bubble Sort</option>
+                      <option value="insertionSort">Insertion Sort</option>
                     </select>
                     <div>
-                      <button id="gen-button" type="button">Sort</button>
+                      <button id="sort-button" type="button">Sort</button>
+                      <p class="sort-error-mssg"></p>
+
                     </div>
-                    <p id="error-mssg"></p>
+                    <canvas id="sorted-array-chart" width="400" height="400"></canvas>
                   </div>
                 </div>
-            <!-- <h2>Choose a Sorting Algorithm</h2>
 
-              <button id="gen-button" type="button">Sort</button>               -->
-        
+                  <table class="algo-table">
+                    <tr>
+                      <th class="tg-0pky">Algorithm</th>
+                      <th class="tg-0pky">Time Complexity</th>
+                      <th class="tg-0pky">Array Size </th>
+                      <th class="tg-0pky">Time Taken (ms)</th>
+                    </tr>
+                  </table>
       </div>
     </main>
 
@@ -97,6 +105,8 @@
         </select>
       </div> -->
     <!-- </main> -->
+    <script src="sorting-algo/allSorts.js"></script>
     <script src="script.js"></script>
+    
   </body>
 </html>

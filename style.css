@@ -62,11 +62,12 @@ h4 {
   transition: all 0.3s;
 }
 
-#error-mssg {
+#error-mssg,
+.sort-error-mssg {
   margin: 10px 0;
   font-weight: 500;
   color: red;
-  font-size: 18px;
+  font-size: 1.5em;
   text-align: center;
 }
 

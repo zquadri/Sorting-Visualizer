@@ -72,7 +72,7 @@ h4 {
 }
 
 #gen-button {
-  font-size: 1.6em;
+  font-size: 1em;
   margin: 2em 0;
   border-radius: 5px;
   background-color: rgba(255, 99, 80);
@@ -88,7 +88,7 @@ h4 {
 }
 
 #sort-button {
-  font-size: 1.6em;
+  font-size: 1em;
   margin: 2em 0;
   border-radius: 5px;
   background-color: rgba(255, 99, 80);
@@ -117,7 +117,7 @@ h4 {
 
 .select-css {
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1em;
   font-family: lato;
   font-weight: 300;
   color: #444;
